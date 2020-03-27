@@ -136,8 +136,13 @@ public class MainActivity extends AppCompatActivity {
 
         timeLeftFormatted = String.format(Locale.getDefault(),
                     "%02d:%02d:%02d", hours, minutes, seconds);
+        if(day>0){
+            mTextViewCountDown.setText(day+" / "+timeLeftFormatted);
+        }else {
+            mTextViewCountDown.setText(timeLeftFormatted);
+        }
 
-        mTextViewCountDown.setText(day+" / "+timeLeftFormatted);
+
     }
 
     private void updateWatchInterface() {
